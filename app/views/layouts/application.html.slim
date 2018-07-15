@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta content='IE=edge' http-equiv='X-UA-Compatible'
+    meta content='width=device-width, initial-scale=1' name='viewport'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    header
+      .container-fluid.custom-head
+        .col-md-2
+      .header-main
+        .container-fluid
+      .nav.navbar.navigation
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle data-toggle="collapse" data-target="#myNavbar" type = 'button'
+              span.icon-bar#a-custom
+              span.icon-bar#a-custom
+              span.icon-bar#a-custom
+            = link_to 'Image Gallery', '#', class: 'navbar-brand', id: 'a-custom'
+          #myNavbar.collapse.navbar-collapse
+            ul.nav.navbar-nav
+              = render partial: 'layouts/navigation'
+    .container
+      - if notice
+        p.alert.alert-success
+          = notice
+      - if alert
+        p.alert.alert-danger
+          = alert
+    = yield

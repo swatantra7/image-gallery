@@ -1,0 +1,23 @@
+.container
+  .space-20
+    h1.center
+      = 'Add Images'
+    .space-20
+    .panel.panel-primary
+      .panel-heading.icon
+        i.glyphicon.glyphicon-tint
+      .space-20
+      = form_for @image, validate: true, html: {class: 'form-horizontal'} do |f|  
+        .form-group
+          = f.label :image_list, 'Upload Image', class: 'control-label col-sm-2'
+          .col-md-5
+            = f.file_field :image_list, class: 'btn btn-default btn-sm'
+        .space-20
+        .form-group
+          .col-sm-2
+          .col-sm-10
+            = f.submit :upload, class: 'btn btn-success btn-default btn-sm'
+            |&nbsp;
+            = link_to t('.back'), image_galleries_path, class: 'btn btn-danger btn-sm'
+          .space-20  
+

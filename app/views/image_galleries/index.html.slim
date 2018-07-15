@@ -1,0 +1,13 @@
+.category.inner-hero
+  .container
+    h1.hero-header
+      = 'IMAGE GALLERY'  
+.gallery.main-section
+  .row
+    - @images.each do |image|
+      .col-sm-4
+        .panel-size
+          .panel.custom-color
+            .panel-heading
+            .panel-body
+              = link_to (image_tag(image.image_list.url, class: ' .link-block-4 image-size')), image.image_list.url, data: { lightbox: "image-set"}, class: 'image-size'

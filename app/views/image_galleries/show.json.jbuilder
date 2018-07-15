@@ -1,0 +1,1 @@
+json.partial! "image_galleries/image", image: @image
